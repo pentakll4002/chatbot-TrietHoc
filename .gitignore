@@ -1,0 +1,89 @@
+# ===== Python cơ bản =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+*.DS_Store
+
+# ===== Môi trường & cấu hình =====
+.env
+.env.local
+*.bak
+.vscode/
+.idea/
+.venv/
+venv/
+env/
+ENV/
+
+# ===== Streamlit cache =====
+.streamlit/
+.streamlit/cache/
+.streamlit/profiles/
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# ===== FAISS & vector store =====
+data/vector_store/
+*.faiss
+*.pkl
+*.bin
+*.npy
+
+# ===== Model & dữ liệu lớn =====
+models/
+checkpoints/
+uploads/
+tmp/
+*.pdf
+*.docx
+*.csv
+*.json
+*.h5
+*.pt
+*.onnx
+
+# ===== Azure / Deployment =====
+# Logs & settings
+azure-pipelines.yml
+azure-deploy.yaml
+azure.json
+deployment/
+logs/
+log/
+site/wwwroot/
+App_Data/
+*.zip
+*.tar
+*.tar.gz
+
+# Azure Functions / WebApp
+local.settings.json
+bin/
+obj/
+
+# Docker / Build files
+Dockerfile
+docker-compose.yml
+*.dockerfile
+*.dockerignore
+*.lock
+__docker_build__/
+__pyinstaller_build__/
+dist/
+build/
+
+# ===== Jupyter / Notebook =====
+.ipynb_checkpoints/
+*.ipynb
+
+# ===== Hệ thống & OS =====
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*.tmp
+*.lock
