@@ -1,0 +1,47 @@
+{
+  "name": "my-chatbot-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:frontend\"",
+    "dev:api": "cd .. && uvicorn api_server:app --host 0.0.0.0 --port 5000 --reload",
+    "dev:frontend": "vite",
+    "dev:frontend-only": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.90.2",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "axios": "^1.13.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.62.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.9.1",
+    "recharts": "^3.4.1",
+    "styled-components": "^6.1.19",
+    "yup": "^1.7.0",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
+    "babel-plugin-styled-components": "^2.1.4",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.2.4"
+  }
+}

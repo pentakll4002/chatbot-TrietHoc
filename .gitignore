@@ -41,7 +41,6 @@ tmp/
 *.pdf
 *.docx
 *.csv
-*.json
 *.h5
 *.pt
 *.onnx

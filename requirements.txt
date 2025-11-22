@@ -11,3 +11,6 @@ dotenv
 langchain-core
 sentence-transformers
 requests
+fastapi
+uvicorn[standard]
+python-multipart
