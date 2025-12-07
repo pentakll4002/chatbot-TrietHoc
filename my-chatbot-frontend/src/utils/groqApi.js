@@ -1,7 +1,12 @@
 // Groq API utility for Digital Labor Insight
-// Sử dụng biến môi trường nếu có, nếu không dùng key mặc định
+// API Key phải được cấu hình trong file .env với tên VITE_GROQ_API_KEY
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+
+// Kiểm tra API key khi module được load
+if (!GROQ_API_KEY) {
+  console.error('⚠️ VITE_GROQ_API_KEY chưa được cấu hình trong file .env');
+}
 
 /**
  * Call Groq API to analyze digital economic sector
@@ -64,6 +69,15 @@ LƯU Ý QUAN TRỌNG về "tienTrinhAnhHuong":
 - Nếu không có tiến trình nào rõ ràng, trả về mảng rỗng []`;
 
   const userPrompt = `Phân tích chi tiết lĩnh vực: ${sector}. Đặc biệt chú ý đến các tiến trình, xu hướng, hoặc quá trình đang diễn ra có ảnh hưởng đến cả LLSX và QHSX.`;
+
+  // Kiểm tra API key trước khi gọi API
+  if (!GROQ_API_KEY) {
+    return {
+      success: false,
+      error: 'API Key chưa được cấu hình. Vui lòng tạo file .env với VITE_GROQ_API_KEY=your_api_key',
+      data: null
+    };
+  }
 
   try {
     const response = await fetch(GROQ_API_URL, {
@@ -152,6 +166,15 @@ Trả về JSON với cấu trúc:
 
   const userPrompt = `Dựa trên phân tích sau, đề xuất giải pháp và mô hình QHSX mới:
 ${JSON.stringify(analysisData, null, 2)}`;
+
+  // Kiểm tra API key trước khi gọi API
+  if (!GROQ_API_KEY) {
+    return {
+      success: false,
+      error: 'API Key chưa được cấu hình. Vui lòng tạo file .env với VITE_GROQ_API_KEY=your_api_key',
+      data: null
+    };
+  }
 
   try {
     const response = await fetch(GROQ_API_URL, {
