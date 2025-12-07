@@ -1,6 +1,6 @@
 // Groq API utility for Digital Labor Insight
 // Sử dụng biến môi trường nếu có, nếu không dùng key mặc định
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || "VITE_GROQ_API_KEY";
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 /**
